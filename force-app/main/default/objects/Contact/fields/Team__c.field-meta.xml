@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team__c</fullName>
+    <label>Team</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Red Bull Racing</fullName>
+                <default>false</default>
+                <label>Red Bull Racing</label>
+            </value>
+            <value>
+                <fullName>Mercedes-AMG Petronas Formula One Team</fullName>
+                <default>false</default>
+                <label>Mercedes-AMG Petronas Formula One Team</label>
+            </value>
+            <value>
+                <fullName>Scuderia Ferrari</fullName>
+                <default>false</default>
+                <label>Scuderia Ferrari</label>
+            </value>
+            <value>
+                <fullName>McLaren F1 Team</fullName>
+                <default>false</default>
+                <label>McLaren F1 Team</label>
+            </value>
+            <value>
+                <fullName>Alpine F1 Team</fullName>
+                <default>false</default>
+                <label>Alpine F1 Team</label>
+            </value>
+            <value>
+                <fullName>Aston Martin Cognizant Formula One Team</fullName>
+                <default>false</default>
+                <label>Aston Martin Cognizant Formula One Team</label>
+            </value>
+            <value>
+                <fullName>Scuderia AlphaTauri</fullName>
+                <default>false</default>
+                <label>Scuderia AlphaTauri</label>
+            </value>
+            <value>
+                <fullName>Alfa Romeo Racing Orlen</fullName>
+                <default>false</default>
+                <label>Alfa Romeo Racing Orlen</label>
+            </value>
+            <value>
+                <fullName>Haas F1 Team</fullName>
+                <default>false</default>
+                <label>Haas F1 Team</label>
+            </value>
+            <value>
+                <fullName>Williams Racing</fullName>
+                <default>false</default>
+                <label>Williams Racing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
