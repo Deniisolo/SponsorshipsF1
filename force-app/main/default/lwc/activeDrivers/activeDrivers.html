@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Active Drivers">
+        <template if:true={drivers.length}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr>
+                        <th>User Picture</th>
+                        <th>Driver Name</th>
+                        <th>Team</th>
+                        <th>Main Sponsor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={drivers} for:item="driver">
+                        <tr key={driver.Id}>
+                            <td>
+                                <img src={driver.ImageUrl} alt="Profile Picture" class="driver-image" />
+                            </td>
+                            <td>{driver.Name}</td>
+                            <td>{driver.Team}</td>
+                            <td>{driver.Sponsor}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template if:false={drivers.length}>
+            <p>No active drivers found.</p>
+        </template>
+    </lightning-card>
+</template>
