@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Available_Value_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Amount  &gt; Account.Available_Value__c</errorConditionFormula>
+    <errorDisplayField>Amount</errorDisplayField>
+    <errorMessage>The available value is not enough.</errorMessage>
+</ValidationRule>
