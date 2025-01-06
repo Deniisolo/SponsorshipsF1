@@ -1,6 +1,6 @@
 <template>
     <lightning-card title="Active Drivers">
-        <template if:true={drivers.length}>
+        <template if:true={drivers}>
             <table class="slds-table slds-table_cell-buffer slds-table_bordered">
                 <thead>
                     <tr>
@@ -18,13 +18,13 @@
                             </td>
                             <td>{driver.Name}</td>
                             <td>{driver.Team}</td>
-                            <td>{driver.Sponsor}</td>
+                            <td>{driver.MainSponsor}</td>
                         </tr>
                     </template>
                 </tbody>
             </table>
         </template>
-        <template if:false={drivers.length}>
+        <template if:false={drivers}>
             <p>No active drivers found.</p>
         </template>
     </lightning-card>

@@ -1,6 +1,6 @@
 .driver-image {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%; 
     object-fit: cover;  
     border: 2px solid #ccc; 

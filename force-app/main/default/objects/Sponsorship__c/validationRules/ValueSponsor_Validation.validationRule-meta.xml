@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValueSponsor_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>Value__c &gt; Opportunity__r.Amount</errorConditionFormula>
+    <errorDisplayField>Value__c</errorDisplayField>
+    <errorMessage>The value of the sponsorship cannot be higher than the value closed on the opportunity.</errorMessage>
+</ValidationRule>

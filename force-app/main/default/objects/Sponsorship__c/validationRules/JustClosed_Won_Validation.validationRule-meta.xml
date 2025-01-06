@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JustClosed_Won_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISPICKVAL(Opportunity__r.Phase__c, &quot;Closed-Won&quot;))</errorConditionFormula>
+    <errorDisplayField>Opportunity__c</errorDisplayField>
+    <errorMessage>Sponsorship cannot be created until the opportunity is &quot;Closed-Won.&quot;</errorMessage>
+</ValidationRule>
