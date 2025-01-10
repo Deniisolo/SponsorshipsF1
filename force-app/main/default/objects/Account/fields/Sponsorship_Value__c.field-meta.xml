@@ -2,9 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Sponsorship_Value__c</fullName>
     <label>Sponsorship Value</label>
-    <precision>18</precision>
-    <required>false</required>
-    <scale>0</scale>
-    <trackFeedHistory>false</trackFeedHistory>
-    <type>Currency</type>
+    <summarizedField>Sponsorship__c.Value__c</summarizedField>
+    <summaryForeignKey>Sponsorship__c.Sponsor__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
 </CustomField>

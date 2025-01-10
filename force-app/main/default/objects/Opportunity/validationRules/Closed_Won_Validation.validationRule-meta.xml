@@ -3,9 +3,9 @@
     <fullName>Closed_Won_Validation</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-    ISPICKVAL(Phase__c, &quot;Closed-Won&quot;),  
-    ISCHANGED(Phase__c)
+    ISPICKVAL(StageName, &quot;Closed-Won&quot;),  
+    ISCHANGED(StageName)
 )</errorConditionFormula>
-    <errorDisplayField>Phase__c</errorDisplayField>
+    <errorDisplayField>StageName</errorDisplayField>
     <errorMessage>The Phase field cannot be modified after the approval process is completed.</errorMessage>
 </ValidationRule>

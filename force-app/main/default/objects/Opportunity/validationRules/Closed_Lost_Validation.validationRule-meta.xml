@@ -3,18 +3,12 @@
     <fullName>Closed_Lost_Validation</fullName>
     <active>true</active>
     <errorConditionFormula>AND(
-    ISCHANGED(Phase__c),
-    OR(
-        ISPICKVAL(PRIORVALUE(Phase__c), &quot;Closed-Won&quot;),
-        ISPICKVAL(PRIORVALUE(Phase__c), &quot;Closed-Lost&quot;)
-    ),
-    NOT(
-        OR(
-            ISPICKVAL(Phase__c, &quot;Closed-Won&quot;),
-            ISPICKVAL(Phase__c, &quot;Closed-Lost&quot;)
-        )
-    )
+ISCHANGED(StageName),
+ISPICKVAL(PRIORVALUE(StageName), &quot;Closed Lost&quot;),
+NOT(
+ISPICKVAL(StageName, &quot;Closed Lost&quot;)
+)
 )</errorConditionFormula>
-    <errorDisplayField>Name</errorDisplayField>
+    <errorDisplayField>StageName</errorDisplayField>
     <errorMessage>Opportunities in the &quot;Closed-Lost&quot; phase cannot be modified.</errorMessage>
 </ValidationRule>

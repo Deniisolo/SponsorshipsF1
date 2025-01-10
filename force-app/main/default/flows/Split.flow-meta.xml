@@ -19,7 +19,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -32,11 +32,14 @@
     <recordCreates>
         <name>Create_New_Sponsorship</name>
         <label>Create_New_Sponsorship</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>882</locationX>
+        <locationY>506</locationY>
         <connector>
             <targetReference>Update_current_Sponsorshp</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Error_message</targetReference>
+        </faultConnector>
         <inputAssignments>
             <field>Driver__c</field>
             <value>
@@ -67,8 +70,8 @@
     <recordLookups>
         <name>Get_Sponsorships_Active</name>
         <label>Get Sponsorships Active</label>
-        <locationX>176</locationX>
-        <locationY>134</locationY>
+        <locationX>882</locationX>
+        <locationY>182</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>GetDriversTeam</targetReference>
@@ -95,8 +98,8 @@
     <recordLookups>
         <name>GetDriversTeam</name>
         <label>Get Drivers Team</label>
-        <locationX>176</locationX>
-        <locationY>242</locationY>
+        <locationX>882</locationX>
+        <locationY>290</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>SplitSponsorship</targetReference>
@@ -123,8 +126,8 @@
     <recordUpdates>
         <name>Update_current_Sponsorshp</name>
         <label>Update current Sponsorshp</label>
-        <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationX>675</locationX>
+        <locationY>794</locationY>
         <connector>
             <targetReference>End_Split</targetReference>
         </connector>
@@ -147,8 +150,8 @@
     <screens>
         <name>End_Split</name>
         <label>End Split</label>
-        <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationX>676</locationX>
+        <locationY>985</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -161,11 +164,27 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Error_message</name>
+        <label>Error message</label>
+        <locationX>1039</locationX>
+        <locationY>766</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Error</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 28px; font-family: sans-serif;&quot;&gt;The driver already has an active sponsorship.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <description>holla</description>
         <name>SplitSponsorship</name>
         <label>Split Sponsorship</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationX>882</locationX>
+        <locationY>398</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -235,13 +254,20 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationX>756</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Get_Sponsorships_Active</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <variables>
+        <name>errorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>NewSponsorshipValue</name>
         <dataType>Currency</dataType>

@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>TotalValueLess_Validation</fullName>
     <active>true</active>
-    <errorConditionFormula>Total_Value__c   &lt;  Sponsorship_Value__c</errorConditionFormula>
+    <errorConditionFormula>Total_Value__c &lt;  Sponsorship_Value__c</errorConditionFormula>
     <errorDisplayField>Total_Value__c</errorDisplayField>
     <errorMessage>Total amount is less than the amount in sponsorships Current</errorMessage>
 </ValidationRule>

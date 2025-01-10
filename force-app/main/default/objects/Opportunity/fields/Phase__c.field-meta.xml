@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Prospecting</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>Prospecting</label>
             </value>
             <value>
