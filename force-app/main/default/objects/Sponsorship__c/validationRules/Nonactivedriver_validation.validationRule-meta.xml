@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Nonactivedriver_validation</fullName>
     <active>true</active>
-    <errorConditionFormula>Active__c = FALSE</errorConditionFormula>
+    <errorConditionFormula>Driver__r.Active__c  = FALSE</errorConditionFormula>
     <errorDisplayField>Sponsor__c</errorDisplayField>
     <errorMessage>The driver is not active, cannot have a sponsorship.</errorMessage>
 </ValidationRule>

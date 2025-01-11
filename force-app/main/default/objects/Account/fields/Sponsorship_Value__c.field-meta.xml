@@ -3,6 +3,11 @@
     <fullName>Sponsorship_Value__c</fullName>
     <label>Sponsorship Value</label>
     <summarizedField>Sponsorship__c.Value__c</summarizedField>
+    <summaryFilterItems>
+        <field>Sponsorship__c.Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
     <summaryForeignKey>Sponsorship__c.Sponsor__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <type>Summary</type>

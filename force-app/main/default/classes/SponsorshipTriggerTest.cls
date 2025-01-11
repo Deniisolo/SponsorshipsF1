@@ -52,7 +52,7 @@ public class SponsorshipTriggerTest {
             insert sponsorship2;
             System.assert(false, 'Expected a DMLException due to duplicate active sponsorships.');
         } catch (DmlException e) {
-            System.assert(e.getMessage().contains('El piloto ya tiene un patrocinio activo.'));
+            System.assert(e.getMessage().contains('The driver already has an active sponsorship.'));
         }
         Test.stopTest();
     }

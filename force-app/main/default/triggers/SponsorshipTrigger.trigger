@@ -10,7 +10,7 @@ trigger SponsorshipTrigger on Sponsorship__c (before insert, before update) {
             ];
             
             if (!existingSponsorships.isEmpty()) {
-                sponsorship.addError('El piloto ya tiene un patrocinio activo.');
+                sponsorship.addError('The driver already has an active sponsorship.');
             }
         }
     }

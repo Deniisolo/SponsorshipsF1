@@ -1,29 +1,49 @@
-/**
- * This class contains unit tests for validating the behavior of Apex classes
- * and triggers.
- *
- * Unit tests are class methods that verify whether a particular piece
- * of code is working properly. Unit test methods take no arguments,
- * commit no data to the database, and are flagged with the testMethod
- * keyword in the method definition.
- *
- * All test methods in an org are executed whenever Apex code is deployed
- * to a production org to confirm correctness, ensure code
- * coverage, and prevent regressions. All Apex classes are
- * required to have at least 75% code coverage in order to be deployed
- * to a production org. In addition, all triggers must have some code coverage.
- * 
- * The @isTest class annotation indicates this class only contains test
- * methods. Classes defined with the @isTest annotation do not count against
- * the org size limit for all Apex scripts.
- *
- * See the Apex Language Reference for more information about Testing and Code Coverage.
- */
 @isTest
-private class DriverControllerTest {
-
+public class DriverControllerTest {
     @isTest
-    static void myUnitTest() {
-        // TO DO: implement unit test
+    static void testGetActiveDrivers() {
+  
+        Account sponsor = new Account(
+            Name = 'Test Sponsor',
+            Sector__c = 'Private',
+            Industry = 'Agriculture',
+            Total_Value__c = 10000000
+        );
+        insert sponsor;
+
+
+        Contact driver = new Contact(
+            FirstName = 'John',
+            LastName = 'Doe',
+            Email = 'john.doe@example.com',
+            Active__c = true,
+            Team__c = 'Williams Racing' 
+        );
+        insert driver;
+
+
+        Opportunity opp = new Opportunity(
+            Name = 'Test Opportunity',
+            AccountId = sponsor.Id,
+            StageName = 'Closed Won',
+            CloseDate = Date.today(),
+            Amount = 10000
+        );
+        insert opp;
+
+        Sponsorship__c sponsorship1 = new Sponsorship__c(
+            Sponsor__c = sponsor.Id,
+            Opportunity__c = opp.Id,
+            Driver__c = driver.Id,
+            Value__c = 5000,
+            Active__c = true
+        );
+        insert sponsorship1;
+
+        Test.startTest();
+        List<Map<String, Object>> drivers = DriverController.getActiveDrivers();
+        Test.stopTest();
+
+        System.assertEquals(1, drivers.size(), 'Must return 1 active drivers.');
     }
 }
