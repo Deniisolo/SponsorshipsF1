@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
+    <decisions>
+        <name>validate_Selection</name>
+        <label>Validate Selection</label>
+        <locationX>876</locationX>
+        <locationY>556</locationY>
+        <defaultConnector>
+            <targetReference>Create_New_Sponsorship</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ValidateSelectionbad</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>prueba.firstSelectedRow.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>error_value</targetReference>
+            </connector>
+            <label>Validate Selection bad</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <formulas>
         <name>split</name>
@@ -32,8 +54,8 @@
     <recordCreates>
         <name>Create_New_Sponsorship</name>
         <label>Create_New_Sponsorship</label>
-        <locationX>882</locationX>
-        <locationY>506</locationY>
+        <locationX>620</locationX>
+        <locationY>679</locationY>
         <connector>
             <targetReference>Update_current_Sponsorshp</targetReference>
         </connector>
@@ -126,8 +148,8 @@
     <recordUpdates>
         <name>Update_current_Sponsorshp</name>
         <label>Update current Sponsorshp</label>
-        <locationX>675</locationX>
-        <locationY>794</locationY>
+        <locationX>568</locationX>
+        <locationY>913</locationY>
         <connector>
             <targetReference>End_Split</targetReference>
         </connector>
@@ -150,8 +172,8 @@
     <screens>
         <name>End_Split</name>
         <label>End Split</label>
-        <locationX>676</locationX>
-        <locationY>985</locationY>
+        <locationX>567</locationX>
+        <locationY>1039</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -166,14 +188,33 @@
     <screens>
         <name>Error_message</name>
         <label>Error message</label>
-        <locationX>1039</locationX>
-        <locationY>766</locationY>
+        <locationX>1063</locationX>
+        <locationY>879</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <fields>
             <name>Error</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0); font-size: 28px; font-family: sans-serif;&quot;&gt;The driver already has an active sponsorship.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>error_value</name>
+        <label>error value</label>
+        <locationX>1061</locationX>
+        <locationY>398</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>SplitSponsorship</targetReference>
+        </connector>
+        <fields>
+            <name>errorvalues</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 20px; color: rgb(255, 0, 0); font-family: sans-serif;&quot;&gt;You must select a driver&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>
@@ -189,7 +230,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Create_New_Sponsorship</targetReference>
+            <targetReference>validate_Selection</targetReference>
         </connector>
         <fields>
             <name>Text</name>

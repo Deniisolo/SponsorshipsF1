@@ -4,5 +4,5 @@
     <active>true</active>
     <errorConditionFormula>Amount  &gt; Account.Available_Value__c</errorConditionFormula>
     <errorDisplayField>Amount</errorDisplayField>
-    <errorMessage>The available value is not enough.</errorMessage>
+    <errorMessage>The sponsor does not have enough money.</errorMessage>
 </ValidationRule>

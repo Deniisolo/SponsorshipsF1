@@ -4,5 +4,5 @@
     <active>true</active>
     <errorConditionFormula>Total_Value__c &lt;  Sponsorship_Value__c</errorConditionFormula>
     <errorDisplayField>Total_Value__c</errorDisplayField>
-    <errorMessage>Total amount is less than the amount in sponsorships Current</errorMessage>
+    <errorMessage>Total amount is less than the amount in Sponsorship Value</errorMessage>
 </ValidationRule>

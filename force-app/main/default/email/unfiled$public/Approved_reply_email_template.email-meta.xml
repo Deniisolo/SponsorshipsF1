@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>reply_email_template</letterhead>
+    <name>Approved reply email template</name>
+    <style>formalLetter</style>
+    <subject>Your Opportunity &quot;{!Opportunity.Name}&quot; Has Been Approved 🎉</subject>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

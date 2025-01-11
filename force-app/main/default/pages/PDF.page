@@ -1,0 +1,92 @@
+<apex:page standardController="Contact" showHeader="false" applyBodyTag="false" renderAs="pdf" contenttype="application/pdf">
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+    
+            h1, h2 {
+                text-align: center;
+                color: black; 
+            }
+    
+            p {
+                margin: 10px 0;
+                font-size: 14px;
+            }
+    
+            p strong {
+                color: red; 
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+    
+            table, th, td {
+                border: 1px solid red; 
+            }
+    
+            th, td {
+                text-align: left;
+                padding: 8px;
+                font-size: 14px;
+            }
+    
+            th {
+                background-color: #f8d7da; 
+                color: red;
+            }
+    
+            td {
+                color: #333; 
+            }
+    
+            .header-image {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+    
+            .header-image img {
+               width: 90%; 
+               max-width: 900px; 
+               height: auto; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header-image">
+            <img src="{!URLFOR($Resource.HeaderEmail)}" alt="Header Image" />
+        </div>
+    
+        <h1>Driver Sponsorships</h1>
+        <p><strong>Driver Name:</strong> {!Contact.Name}</p>
+        <p><strong>Age:</strong> {!Contact.Age__c}</p>
+        <p><strong>Team:</strong> {!Contact.Team__c}</p>
+        
+        <h2>Sponsorships</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sponsor Name</th>
+                    <th>Sponsorship Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat value="{!Contact.Sponsorships__r}" var="sponsorship">
+                    <tr>
+                        <td>{!sponsorship.Sponsor__r.Name}</td>
+                        <td>
+                            <apex:outputText value="{0,number,###,###,##0.00}">
+                                <apex:param value="{!sponsorship.Value__c}" />
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </body>
+</apex:page>
